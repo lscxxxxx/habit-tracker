@@ -5,7 +5,12 @@ import SleepHabit from './habits/SleepHabit'
 import ToDoHabit from './habits/ToDoHabit'
 import WaterHabit from './habits/WaterHabit'
 
-export default function HabitDashboard({ water, waterGoal, onAddWater}) {
+export default function HabitDashboard({ water, 
+                                         waterGoal, 
+                                         onAddWater, 
+                                         exercise, 
+                                         exerciseGoal, 
+                                         onAddExercise}) {
     return (
         <div>
             <h2>Hábitos do Dia</h2>
@@ -14,7 +19,11 @@ export default function HabitDashboard({ water, waterGoal, onAddWater}) {
                 goal={waterGoal}
                 onAdd={onAddWater}
             />
-            <ExerciseHabit />
+            <ExerciseHabit 
+                data={exercise}
+                goal={exerciseGoal}
+                onAdd={onAddExercise}
+            />
             <MedicineHabit />
             <SleepHabit />
             <ToDoHabit />

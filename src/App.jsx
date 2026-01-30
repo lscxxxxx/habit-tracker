@@ -6,17 +6,35 @@ import DataInfo from './components/DataInfo'
 
 function App() {
   const [date] = useState(new Date())
+
   const [water, setWater] = useState(0)
   const waterGoal = 2000
+
+  const [exercise, setExercise] = useState({ totalMinutes: 0, activities: [] })
+  const exerciseGoal = 30
+  const addExercise = (name, minutes) => {
+    setExercise(prev => ({
+      totalMinutes: prev.totalMinutes + minutes,
+      activities: [
+        ...prev.activities,
+        { name, minutes }
+      ]
+    }))
+  }
+
 
   return (
     <>
       <Header />
       <DataInfo date={date} />
-      <HabitDashboard 
+      <HabitDashboard
         water={water}
         waterGoal={waterGoal}
         onAddWater={(amount) => setWater(water + amount)}
+
+        exercise={exercise}
+        exerciseGoal={exerciseGoal}
+        onAddExercise={addExercise}
       />
     </>
   )
