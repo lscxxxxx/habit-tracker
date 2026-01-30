@@ -1,7 +1,7 @@
-export default function DataInfo() {
+export default function DataInfo({ date }) {
     return (
         <div>
-            <h1>Habit Tracker</h1>
+            <p>{ date.toLocaleDateString() }</p>
         </div>
-    );
+    )
 }

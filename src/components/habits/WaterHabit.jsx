@@ -1,7 +1,9 @@
-export default function WaterHabit() {
+export default function WaterHabit({ value, goal, onAdd }) {
     return (
         <div>
-            <h1>Água</h1>
+            <h3>Água</h3>
+            <p>{value} ml / {goal} ml</p>
+            <button onClick={() => onAdd(200)}>+200 ml</button>
         </div>
-    );
+    )
 }
