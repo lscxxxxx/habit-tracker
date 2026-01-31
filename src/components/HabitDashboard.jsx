@@ -41,8 +41,6 @@ export default function HabitDashboard({ water,
                 goal={sleepGoal}
                 onUpdate={onUpdateSleep}
             />
-            <ToDoHabit />
-            <AchievementHabit />
         </div>
     );
 }
