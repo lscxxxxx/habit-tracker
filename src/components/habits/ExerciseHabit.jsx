@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Card from '../ui/Card'
+import HabitCard from '../HabitCard'
 
 export default function ExerciseHabit({ data, goal, onAdd }) {
     const [activity, setActivity] = useState('')
@@ -12,7 +12,7 @@ export default function ExerciseHabit({ data, goal, onAdd }) {
     }
 
     return (
-        <Card title="🏃 Atividade Física">
+        <HabitCard title="🏃 Atividade Física" color="#4caf50">
             <p>{ data.totalMinutes } min / { goal } min</p>
             <input placeholder="Atividade" value={activity} onChange={e => setActivity(e.target.value)}/>
             <input placeholder="Minutos" value={minutes} onChange={e => setMinutes(e.target.value)}/>
@@ -22,6 +22,6 @@ export default function ExerciseHabit({ data, goal, onAdd }) {
                     <li key={ index }>{ item.name } – { item.minutes } min</li>
                 )) }
             </ul>
-        </Card>
+        </HabitCard>
     );
 }

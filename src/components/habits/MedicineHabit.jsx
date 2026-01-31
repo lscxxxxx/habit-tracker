@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Card from '../ui/Card'
+import HabitCard from '../HabitCard'
 
 export default function MedicineHabit({ medicines, onAdd, onToggle }) {
     const [name, setName] = useState('')
@@ -13,7 +13,7 @@ export default function MedicineHabit({ medicines, onAdd, onToggle }) {
     }
 
     return (
-        <Card title="💊 Medicamentos">
+        <HabitCard title="💊 Medicamentos" color="#ff7043">
             <input list="medicine-suggestions" placeholder="Medicamento" value={name} onChange={e => setName(e.target.value)} />
             <datalist id="medicine-suggestions">
                 {suggestions.map((s, i) => (
@@ -29,6 +29,6 @@ export default function MedicineHabit({ medicines, onAdd, onToggle }) {
                     </li>
                 ))}
             </ul>
-        </Card>
+        </HabitCard>
     )
 }
