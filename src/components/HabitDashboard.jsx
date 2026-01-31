@@ -19,7 +19,7 @@ export default function HabitDashboard({ water,
                                          onToggleMedicine
                                         }) {
     return (
-        <div>
+        <div className="dashboard">
             <h2>Hábitos do Dia</h2>
             <WaterHabit 
                 value={water}
