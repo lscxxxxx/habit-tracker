@@ -13,7 +13,10 @@ export default function HabitDashboard({ water,
                                          onAddExercise,
                                          sleep,
                                          sleepGoal,
-                                         onUpdateSleep  
+                                         onUpdateSleep,
+                                         medicines,
+                                         onAddMedicine,
+                                         onToggleMedicine
                                         }) {
     return (
         <div>
@@ -28,7 +31,11 @@ export default function HabitDashboard({ water,
                 goal={exerciseGoal}
                 onAdd={onAddExercise}
             />
-            <MedicineHabit />
+            <MedicineHabit 
+                medicines={medicines}
+                onAdd={onAddMedicine}
+                onToggle={onToggleMedicine}
+            />
             <SleepHabit 
                 value={sleep}
                 goal={sleepGoal}

@@ -26,6 +26,21 @@ function App() {
   const sleepGoal = 8
   const updateSleep = (hours) => { setSleep(hours) }
 
+  const [medicines, setMedicines] = useState([])
+  const addMedicineDose = (name, time) => {
+    setMedicines(prev => [
+      ...prev,
+      { name, time, taken: false }
+    ])
+  }
+  const toggleMedicine = (index) => {
+    setMedicines(prev =>
+      prev.map((med, i) =>
+        i === index ? { ...med, taken: !med.taken } : med
+      )
+    )
+  }
+
   return (
     <>
       <Header />
@@ -42,6 +57,10 @@ function App() {
         sleep={sleep}
         sleepGoal={sleepGoal}
         onUpdateSleep={updateSleep}
+
+        medicines={medicines}
+        onAddMedicine={addMedicineDose}
+        onToggleMedicine={toggleMedicine}
       />
     </>
   )
