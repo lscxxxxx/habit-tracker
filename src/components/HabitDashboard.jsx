@@ -18,7 +18,6 @@ export default function HabitDashboard({ water,
                                         }) {
     return (
         <div className="dashboard">
-            <h2>Hábitos do Dia</h2>
             <WaterHabit 
                 value={water}
                 goal={waterGoal}
