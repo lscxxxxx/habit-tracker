@@ -22,6 +22,9 @@ function App() {
     }))
   }
 
+  const [sleep, setSleep] = useState(0)
+  const sleepGoal = 8
+  const updateSleep = (hours) => { setSleep(hours) }
 
   return (
     <>
@@ -35,6 +38,10 @@ function App() {
         exercise={exercise}
         exerciseGoal={exerciseGoal}
         onAddExercise={addExercise}
+
+        sleep={sleep}
+        sleepGoal={sleepGoal}
+        onUpdateSleep={updateSleep}
       />
     </>
   )
